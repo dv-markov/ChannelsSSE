@@ -1,0 +1,12 @@
+venv
+.idea
+db.sqlite3
+/static/
+**/migrations/*
+!**/migrations/__init__.py
+
+# Django files
+*.log
+*.pot
+*.pyc
+__pycache__
