@@ -1,1 +1,1 @@
-# Djnago Channels - Websocket and SSE ptotocols
+# Django Channels - Websocket and SSE ptotocols
