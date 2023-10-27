@@ -1,1 +1,1 @@
-# Django Channels - Websocket and SSE ptotocols
+# Django Channels - Websocket and SSE protocols
