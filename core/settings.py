@@ -123,8 +123,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Channels / Daphne
+# Daphne
 ASGI_APPLICATION = "core.asgi.application"
+
+# Channels
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",

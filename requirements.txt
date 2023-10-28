@@ -27,3 +27,5 @@ txaio==23.1.1
 typing_extensions==4.8.0
 tzdata==2023.3
 zope.interface==6.1
+
+Faker>=19.12.0
