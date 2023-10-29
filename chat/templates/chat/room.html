@@ -13,8 +13,12 @@
     <script>
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
 
+        const ws_scheme = window.location.protocol === "https:" ? "wss" : "ws";
+        {#chatSocket = new ReconnectingWebSocket(ws_scheme + '://' + window.location.host + window.location.pathname);#}
+        
         const chatSocket = new WebSocket(
-            'ws://'
+            ws_scheme
+            + '://'
             + window.location.host
             + '/ws/chat/'
             + roomName
