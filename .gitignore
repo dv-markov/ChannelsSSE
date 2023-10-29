@@ -5,6 +5,7 @@ db.sqlite3
 /static/
 **/migrations/*
 !**/migrations/__init__.py
+ssl-certs
 
 # Django files
 *.log
