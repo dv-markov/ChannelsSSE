@@ -20,7 +20,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         # Join room group
         await self.channel_layer.group_add(self.room_group_name, self.channel_name)
 
-        # Send greetings
+        # # Send greetings
         message = f"{'-'*5} {self.author_name} присоединяется к чату! [uid:{author_id}] {'-'*5}"
         await self.channel_layer.group_send(
             self.room_group_name, {"type": "chat.message", "message": message}
@@ -42,7 +42,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
         await self.channel_layer.group_send(
             self.room_group_name, {
                 "type": "chat.message",
-                "message": f"[{timestamp}] {self.author_name}: {message}"
+                "message": f"[{timestamp}] {self.author_name}: {message}",
+                # "message": message,
             }
         )
 
@@ -98,6 +99,7 @@ class ChatConsumerSync(WebsocketConsumer):
 
         # Send message to WebSocket
         self.send(text_data=json.dumps({"message": f"{self.channel_name}: {message}"}))
+        # self.send(text_data=json.dumps({"message": message}))
 
 
 class ChatConsumerSimple(WebsocketConsumer):
